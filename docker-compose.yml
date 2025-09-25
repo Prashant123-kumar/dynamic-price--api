@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  api:
+    build: .
+    container_name: dp_api
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - DYNAMIC_MODEL_PATH=/app/models/dynamic_pricing_model.pkl
+      - DYNAMIC_PRICE_ALPHA=0.05
+    volumes:
+      - ./models:/app/models:ro
+      - ./predictions.db:/app/predictions.db
+    ports:
+      - "5000:5000"
+    networks:
+      - dpnet
+
+networks:
+  dpnet:
+    driver: bridge
