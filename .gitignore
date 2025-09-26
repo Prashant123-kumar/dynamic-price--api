@@ -1,6 +1,7 @@
-new-venv/
-__pycache__/
-*.pyc
-.env
-*.pkl
-*.onnx
+Flask==2.3.3
+Flask-Cors==3.0.10
+joblib==1.3.2
+numpy==1.26.4
+gunicorn==21.2.0
+requests==2.31.0
+# onnxruntime==1.17.0   # uncomment only if you actually use ONNX in your app
