@@ -1,0 +1,6 @@
+new-venv/
+__pycache__/
+*.pyc
+.env
+*.pkl
+*.onnx
